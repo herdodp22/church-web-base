@@ -87,10 +87,10 @@
           <a href="index.php" style="text-decoration: none; color: white;">Beranda</a>
         </div>
       </li>
-     
+   
       <li>
         <div style="font-size: 30px;font-weight: bolder;">
-          <a href="informasi.php" style="text-decoration: none; color: black;">Data jemaat</a>
+          <a href="informasi.php" style="text-decoration: none; color: white;">Data jemaat</a>
         </div>
       </li>
 
@@ -99,7 +99,7 @@
           <a href="kegiatan.php" style="text-decoration: none; color: white;">Data kegiatan</a>
         </div>
       </li>
-    
+     
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
           <a href="datapernikahan.php" style="text-decoration: none;color: white;">Data pernikahan</a>
@@ -112,7 +112,7 @@
       </li>
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
-          <a href="datajemaatkeluar.php" style="text-decoration: none;color: white;">Data jemaat keluar</a>
+          <a href="datajemaatkeluar.php" style="text-decoration: none;color: black;">Data jemaat keluar</a>
         </div>
       </li>
     </ul>
@@ -240,13 +240,13 @@
           <a href="index.php" style="text-decoration: none; color: white;">Beranda</a>
         </div>
       </li>
-      
+     
       <li>
         <div style="font-size: 30px;font-weight: bolder;">
-          <a href="informasi.php" style="text-decoration: none; color: black;">Data jemaat</a>
+          <a href="informasi.php" style="text-decoration: none; color: white;">Data jemaat</a>
         </div>
       </li>
- 
+     
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
           <a href="kegiatan.php" style="text-decoration: none;color: white;">Data kegiatan</a>
@@ -264,7 +264,7 @@
       </li>
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
-          <a href="datajemaatkeluar.php" style="text-decoration: none;color: white;">Data jemaat keluar</a>
+          <a href="datajemaatkeluar.php" style="text-decoration: none;color: black;">Data jemaat keluar</a>
         </div>
       </li>
     </ul>
@@ -277,7 +277,7 @@
     <div class="child2">
 
        <div style="margin-top: -300px;">
-          <h1 style="font-weight: bolder;text-align: center;">KEANGGOTAAN JEMAAT GEREJA</h1>
+          <h1 style="font-weight: bolder;text-align: center;">DATA JEMAAT KELUAR</h1>
         </div>
 
       <div style="color: black;">
