@@ -70,7 +70,7 @@
 
         <div style="display: flex; justify-content: center;text-align: center;padding: 10px;margin: 10px;border:1px solid black; border-radius: 10px;font-weight: bolder;flex-direction: column;">
         <span>Admin : <?php echo $_SESSION['namauser']; ?></span>
-        <a href="tambahanggota.php" style="text-decoration: none;color: blue;margin-right: 10px;">Tambah anggota</a>
+        <a href="tambahanggota.php" style="text-decoration: none;color: blue;margin-right: 10px;">Tambah data baptis</a>
       </div>
 
       </li>
@@ -90,16 +90,16 @@
      
       <li>
         <div style="font-size: 30px;font-weight: bolder;">
-          <a href="informasi.php" style="text-decoration: none; color: black;">Data jemaat</a>
+          <a href="informasi.php" style="text-decoration: none; color: white;">Data jemaat</a>
         </div>
       </li>
 
-      <li>
+       <li>
         <div style="font-size: 30px;font-weight: bolder;">
           <a href="kegiatan.php" style="text-decoration: none; color: white;">Data kegiatan</a>
         </div>
       </li>
-    
+     
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
           <a href="datapernikahan.php" style="text-decoration: none;color: white;">Data pernikahan</a>
@@ -107,7 +107,7 @@
       </li>
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
-          <a href="databaptis.php" style="text-decoration: none;color: white;">Data baptis</a>
+          <a href="databaptis.php" style="text-decoration: none;color: black;">Data baptis</a>
         </div>
       </li>
       <li>
@@ -129,7 +129,7 @@
 
     
        <div style="">
-          <h1 style="font-weight: bolder;text-align: center;">KEANGGOTAAN JEMAAT GEREJA</h1>
+          <h1 style="font-weight: bolder;text-align: center;">DATA BAPTIS</h1>
         </div>
 
           <div style="display: flex; justify-content: right;margin: 10px; padding: 10px; ">
@@ -145,15 +145,11 @@
         <table border="1" style="padding: 10px; margin: 10px; font-size: 20px;text-align: center;">
       
       <tr>
-        <td style="font-weight: bolder;">ID anggota</td>
-        <td style="font-weight: bolder;">Nama</td>
-        <td style="font-weight: bolder;">Tempat lahir</td>
-        <td style="font-weight: bolder;">Tanggal lahir</td>
-        <td style="font-weight: bolder;">Bulan lahir</td>
-        <td style="font-weight: bolder;">Alamat</td>
-        <td style="font-weight: bolder;">Umur</td>
-        <td style="font-weight: bolder;">Jenis kelamin</td>
-        <td style="font-weight: bolder;">Telepon</td>
+        <td style="font-weight: bolder;">ID baptis</td>
+        <td style="font-weight: bolder;">Nama pembaptis</td>
+        <td style="font-weight: bolder;">Nama terbaptis</td>
+        <td style="font-weight: bolder;">Tanggal baptis</td>
+        <td style="font-weight: bolder;">Tanggal data diinput</td>
         <td style="font-weight: bolder;">ACTION</td>
       </tr>
 
@@ -163,43 +159,37 @@
 
       <?php 
         include 'koneksi.php';
-        $ambildata = "SELECT * FROM anggota";
-        $hubungkanambildata = mysqli_query($koneksi, $ambildata);
+        $ambildatabaptis = "SELECT * FROM databaptis";
+        $hubungkanambildatabaptis = mysqli_query($koneksi, $ambildatabaptis);
 
-        while($takedata = mysqli_fetch_array($hubungkanambildata)){
-          $idanggota = $takedata['id_anggota'];
-          $nama = $takedata['nama'];
-          $tempat_lahir = $takedata['tempat_lahir'];
-          $tanggal_lahir = $takedata['tanggal_lahir'];
-          $bulan_lahir = $takedata['bulan_lahir'];
-          $alamat = $takedata['alamat'];
-          $umur = $takedata['umur'];
-          $jenis_kelamin = $takedata['jenis_kelamin'];
-          $telepon = $takedata['telepon'];
+        while($takedatabaptis = mysqli_fetch_array($hubungkanambildatabaptis)){
+          $idbaptis = $takedatabaptis['id_baptis'];
+          $nama_pembaptis = $takedatabaptis['nama_pembaptis'];
+          $nama_terbaptis = $takedatabaptis['nama_terbaptis'];
+          $tanggal_baptis = $takedatabaptis['tanggal_baptis'];
+          $bulan_baptis = $takedatabaptis['bulan_baptis'];
+          $tahun_baptis = $takedatabaptis['tahun_baptis'];
+          $tanggalinputdata = $takedatabaptis['tanggal_inputdata'];
           ?>
         <tr>
-          <td><?php echo $idanggota; ?></td>
-          <td><?php echo $nama; ?></td>
-          <td><?php echo $tempat_lahir; ?></td>
-          <td><?php echo $tanggal_lahir; ?></td>
-          <td><?php echo $bulan_lahir; ?></td>
-          <td><?php echo $alamat; ?></td>
-          <td><?php echo $umur; ?></td>
-          <td><?php echo $jenis_kelamin; ?></td>
-          <td><?php echo $telepon; ?></td>
+          <td><?php echo $idbaptis; ?></td>
+          <td><?php echo $nama_pembaptis; ?></td>
+          <td><?php echo $nama_terbaptis; ?></td>
+          <td><?php echo $tanggal_baptis; ?>-<?php echo $bulan_baptis; ?>-<?php echo $tahun_baptis; ?></td>
+          <td><?php echo $tanggalinputdata; ?></td>
           <td>
             <div style="display: flex;justify-content: center; flex-direction: column;margin-left: 10px; margin-right: 10px;align-content: center; align-items: center;">
              
                 <table>
-                  <form method="POST" action="delete.php?idanggota=<?php echo $idanggota; ?>">
+                  <form method="POST" action="deletebaptis.php?idbaptis=<?php echo $idbaptis; ?>">
                   <tr>
-                    <td><button name="deleteanggota" style="background-color: red; color: white; font-weight: bolder;border:none;padding: 5px;border-radius: 5px;">Delete</button></td>
+                    <td><button name="deletedatabaptis" style="background-color: red; color: white; font-weight: bolder;border:none;padding: 5px;border-radius: 5px;">Delete</button></td>
                   </tr>
                   </form>
 
-                  <form method="POST" action="editanggota.php?idanggota=<?php echo $idanggota; ?>">
+                  <form method="POST" action="editdatabaptis.php?idbaptis=<?php echo $idbaptis; ?>">
                   <tr>
-                    <td><button name="editanggota" style="background-color: green; color: white; font-weight: bolder;border:none;padding: 5px;border-radius: 5px;">Edit</button></td>
+                    <td><button name="editdatabaptis" style="background-color: green; color: white; font-weight: bolder;border:none;padding: 5px;border-radius: 5px;">Edit</button></td>
                   </tr>
                   </form>
                 </table>
@@ -240,13 +230,13 @@
           <a href="index.php" style="text-decoration: none; color: white;">Beranda</a>
         </div>
       </li>
-      
+  
       <li>
         <div style="font-size: 30px;font-weight: bolder;">
-          <a href="informasi.php" style="text-decoration: none; color: black;">Data jemaat</a>
+          <a href="informasi.php" style="text-decoration: none; color: white;">Data jemaat</a>
         </div>
       </li>
- 
+     
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
           <a href="kegiatan.php" style="text-decoration: none;color: white;">Data kegiatan</a>
@@ -259,7 +249,7 @@
       </li>
       <li>
         <div style="font-size: 30px; font-weight: bolder;">
-          <a href="databaptis.php" style="text-decoration: none;color: white;">Data baptis</a>
+          <a href="databaptis.php" style="text-decoration: none;color: black;">Data baptis</a>
         </div>
       </li>
       <li>
@@ -277,7 +267,7 @@
     <div class="child2">
 
        <div style="margin-top: -300px;">
-          <h1 style="font-weight: bolder;text-align: center;">KEANGGOTAAN JEMAAT GEREJA</h1>
+          <h1 style="font-weight: bolder;text-align: center;">DATA Baptis</h1>
         </div>
 
       <div style="color: black;">
@@ -302,30 +292,26 @@
 
       <?php 
         include 'koneksi.php';
-        $ambildata = "SELECT * FROM anggota";
-        $hubungkanambildata = mysqli_query($koneksi, $ambildata);
+        $ambildatabaptis = "SELECT * FROM databaptis";
+        $hubungkanambildatabaptis = mysqli_query($koneksi, $ambildatabaptis);
 
-        while($takedata = mysqli_fetch_array($hubungkanambildata)){
-          $idanggota = $takedata['id_anggota'];
-          $nama = $takedata['nama'];
-          $tempat_lahir = $takedata['tempat_lahir'];
-          $tanggal_lahir = $takedata['tanggal_lahir'];
-          $bulan_lahir = $takedata['bulan_lahir'];
-          $alamat = $takedata['alamat'];
-          $umur = $takedata['umur'];
-          $jenis_kelamin = $takedata['jenis_kelamin'];
-          $telepon = $takedata['telepon'];
+        while($takedatabaptis = mysqli_fetch_array($hubungkanambildatabaptis)){
+          $idbaptis = $takedatabaptis['id_baptis'];
+          $nama_pembaptis = $takedatabaptis['nama_pembaptis'];
+          $nama_terbaptis = $takedatabaptis['nama_terbaptis'];
+          $tanggal_baptis = $takedatabaptis['tanggal_baptis'];
+          $bulan_baptis = $takedatabaptis['bulan_baptis'];
+          $tahun_baptis = $takedatabaptis['tahun_baptis'];
+          $tanggal_inputdata = $takedata['tanggal_inputdata'];
           ?>
         <tr>
-          <td><?php echo $idanggota; ?></td>
-          <td><?php echo $nama; ?></td>
-          <td><?php echo $tempat_lahir; ?></td>
-          <td><?php echo $tanggal_lahir; ?></td>
-          <td><?php echo $bulan_lahir; ?></td>
-          <td><?php echo $alamat; ?></td>
-          <td><?php echo $umur; ?></td>
-          <td><?php echo $jenis_kelamin; ?></td>
-          <td><?php echo $telepon; ?></td>
+          <td><?php echo $idbaptis; ?></td>
+          <td><?php echo $nama_pembaptis; ?></td>
+          <td><?php echo $nama_terbaptis; ?></td>
+          <td><?php echo $tanggal_baptis; ?></td>
+          <td><?php echo $bulan_baptis; ?></td>
+          <td><?php echo $tahun_baptis; ?></td>
+          <td><?php echo $tanggal_inputdata; ?></td>
         </tr>
         <?php
         }
