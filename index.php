@@ -10,7 +10,7 @@
 
     <title>Sistem pendataan jemaat gereja</title>
   </head>
-  <body>
+  <body style="background-color: black;">
 
  <?php 
 include 'koneksi.php';
@@ -48,14 +48,19 @@ if(isset($_SESSION['namauser'])){
 		         <li class="nav-item">
 		          <a class="nav-link" href="#galeri"><span style="font-weight: bolder;color: #ffffff;">GALERI</span></a>
 		        </li>
+
+		        <li class="nav-item">
+		          <a class="nav-link" href="#jadwal"><span style="font-weight: bolder;color: #ffffff;">JADWAL</span></a>
+		        </li>
+
+		        <li class="nav-item">
+		          <a class="nav-link" href="#visimisi"><span style="font-weight: bolder;color: #ffffff;">VISI MISI</span></a>
+		        </li>
 		      </ul>
 		  	
 
 		      
-		      <form class="d-flex" method="POST" action="result.php">
-		        <input class="form-control me-2" type="search" placeholder="Cari jemaat" name="searchweb" aria-label="Search">
-		        <button class="btn btn-outline-success" type="submit" name="submit"><span style="color: white;">Cari</span></button>
-		      </form>
+		     
 		  	
 
 		  		<div style="display: flex;flex-direction: row;">
@@ -106,7 +111,7 @@ if(isset($_SESSION['namauser'])){
 
 			<!-- open jadwal ibadah -->
 
-			<div style="display: flex; flex-direction: column; background-color: black;color: yellow;padding-top: 50px; padding-bottom: 50px;">
+			<div id="jadwal" style="display: flex; flex-direction: column; background-color: black;color: yellow;padding-top: 50px; padding-bottom: 50px;">
 
 				<h2 style="text-align: center;margin: 10px; padding: 10px;">JADWAL IBADAH</h2>
 				
@@ -139,9 +144,119 @@ if(isset($_SESSION['namauser'])){
 				</div>
 
 			</div>
-
-
 			<!-- close jadwal ibadah --> 
+
+
+
+			<!-- open daftar internal gereja 
+
+			<div style="display: flex; justify-content: center;flex-direction: column;background-color: blue;align-content: center;">
+
+				<div style="display: flex;flex-direction: column;justify-content: center;">
+					<div style="display: flex; flex-direction: column;text-align: center;margin: 20px;">
+						<span style="font-weight: bolder; color: white;">PENDETA</span>
+						<span style="font-weight: bolder;text-align: center;color: white;font-size: 20px;">Nama pendeta</span>
+						<span style="color: white; font-size: 15px;"><i>Pendeta</i></span>
+						<span style="border-radius: 20px; color: black;">08123456789</span>
+					</div>
+
+
+
+
+
+
+					<div style="display: flex; text-align: center;justify-content: center;">
+						<span style="color: white; font-weight: bolder; font-size: 30px;">SINTUA</span>
+					</div>
+
+
+
+
+					<div style="display: flex; flex-direction: row;margin-bottom: 50px;">
+						<div style="display: flex; flex-direction: column;text-align: center; margin: 20px;">
+							<span style="font-weight: bolder; color: white;">PENDETA</span>
+							<span style="font-weight: bolder;text-align: center;color: white;font-size: 20px;">Nama pendeta</span>
+							<span style="color: white; font-size: 15px;"><i>Pendeta</i></span>
+							<span style="border-radius: 20px; color: black;">08123456789</span>
+						</div>
+
+						<div style="display: flex; flex-direction: column;text-align: center;margin: 20px;">
+							<span style="font-weight: bolder; color: white;">PENDETA</span>
+							<span style="font-weight: bolder;text-align: center;color: white;font-size: 20px;">Nama pendeta</span>
+							<span style="color: white; font-size: 15px;"><i>Pendeta</i></span>
+							<span style="border-radius: 20px; color: black;">08123456789</span>
+						</div>
+					</div>
+
+
+					<div style="display: flex; flex-direction: row;margin-bottom: 50px;">
+						<div style="display: flex; flex-direction: column;text-align: center;margin: 20px;">
+							<span style="font-weight: bolder; color: white;">PENDETA</span>
+							<span style="font-weight: bolder;text-align: center;color: white;font-size: 20px;">Nama pendeta</span>
+							<span style="color: white; font-size: 15px;"><i>Pendeta</i></span>
+							<span style="border-radius: 20px; color: black;">08123456789</span>
+						</div>
+
+						<div style="display: flex; flex-direction: column;text-align: center;margin: 20px;">
+							<span style="font-weight: bolder; color: white;">PENDETA</span>
+							<span style="font-weight: bolder;text-align: center;color: white;font-size: 20px;">Nama pendeta</span>
+							<span style="color: white; font-size: 15px;"><i>Pendeta</i></span>
+							<span style="border-radius: 20px; color: black;">08123456789</span>
+						</div>
+
+						<div style="display: flex; flex-direction: column;text-align: center;margin: 20px;">
+							<span style="font-weight: bolder; color: white;">PENDETA</span>
+							<span style="font-weight: bolder;text-align: center;color: white;font-size: 20px;">Nama pendeta</span>
+							<span style="color: white; font-size: 15px;"><i>Pendeta</i></span>
+							<span style="border-radius: 20px; color: black;">08123456789</span>
+						</div>
+					</div>
+
+					
+				</div>
+				
+
+			</div>
+			 close daftar internal gereja -->
+
+<hr style="color: yellow;border:5px solid yellow;">
+
+			<!-- open visi misi -->
+
+				<div id="visimisi" style="display: flex; justify-content: center;background-color: black;">
+					<div style="display: flex; justify-content: center;margin: 10px; flex-direction: row;padding: 10px;">
+						<div style="margin: 10px;">
+							<div style="display: flex; flex-direction: column;">
+							<h4 style="text-align: center; color: white;font-weight:bolder;">VISI</h4>
+							<p style="color: yellow; font-weight: bolder; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+
+						<div style="margin: 10px;">
+							<div style="display: flex; flex-direction: column;">
+							<h4 style="text-align: center;color: white;font-weight:bolder;">MISI</h4>
+							<p style="color: yellow; font-weight: bolder;text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+
+
+			<!-- close visi misi -->
+
+
 
 
 
@@ -181,14 +296,18 @@ if(isset($_SESSION['namauser'])){
 		         <li class="nav-item">
 		          <a class="nav-link" href="#galeri"><span style="font-weight: bolder;color: #ffffff;">GALERI</span></a>
 		        </li>
+
+		        <li class="nav-item">
+		          <a class="nav-link" href="#jadwal"><span style="font-weight: bolder;color: #ffffff;">JADWAL</span></a>
+		        </li>
+
+		        <li class="nav-item">
+		          <a class="nav-link" href="#visimisi"><span style="font-weight: bolder;color: #ffffff;">VISI MISI</span></a>
+		        </li>
 		      </ul>
 		  
 
-		       <form class="d-flex" method="POST" action="result.php">
-		        <input class="form-control me-2" type="search" placeholder="Cari jemaat" name="searchweb" aria-label="Search">
-		        <button class="btn btn-outline-success" type="submit" name="submit"><span style="color: white;">Cari</span></button>
-		      </form>
-
+		      
 
 		  		<div style="display: flex;flex-direction: row;">
 		  		<a href="login.php" style="text-decoration: none;margin-right: 10px;margin-left: 10px;color: white;font-weight: bolder;">Login</a>	
@@ -234,6 +353,83 @@ if(isset($_SESSION['namauser'])){
 
 
 
+			<!-- open jadwal ibadah -->
+
+			<div id="jadwal" style="display: flex; flex-direction: column; background-color: black;color: yellow;padding-top: 50px; padding-bottom: 50px;">
+
+				<h2 style="text-align: center;margin: 10px; padding: 10px;">JADWAL IBADAH</h2>
+				
+				<div style="display: flex; flex-direction: row; justify-content: center;">
+					<div style="text-align: center; display: flex;justify-content: center;flex-direction: column;margin: 10px; padding: 10px;">
+						<h3><u>SEKOLAH MINGGU</u></h3>
+						<span style="margin-top: 10px;font-weight: bolder;font-size: 25px;">07.00 - 08.30</span>
+						<span style="color: white; font-weight: bolder;font-size: 20px;">Setiap hari minggu</span>
+					</div>	
+
+					<div style="text-align: center; display: flex;justify-content: center;flex-direction: column;margin: 10px; padding: 10px;">
+						<h3><u>IBADAH UMUM</u></h3>
+						<span style="margin-top: 10px;font-weight: bolder;font-size: 25px;">10.30 - 12.30</span>
+						<div style="display: flex;flex-direction: column; color: white;">
+						<span style="color: white; font-weight: bolder;font-size: 20px;">Minggu I & III</span>
+						<span style="color: white; font-weight: bolder;">Bahasa Indonesia</span>
+						</div>
+						<hr>
+						<div style="display: flex;flex-direction: column; color: white;">
+						<span style="color: white; font-weight: bolder;font-size: 20px;">Minggu II & IV</span>
+						<span style="color: white; font-weight: bolder;">Bahasa Batak</span>
+						</div>
+					</div>
+
+					<div style="text-align: center; display: flex;justify-content: center;flex-direction: column;margin: 10px; padding: 10px;">
+						<h3><u>IBADAH REMAJA</u></h3>
+						<span style="margin-top: 10px;font-weight: bolder;font-size: 25px;">09.00 - 10.30</span>
+						<span style="color: white; font-weight: bolder;font-size: 20px;">Setiap hari minggu</span>
+					</div>
+				</div>
+
+			</div>
+
+
+			<!-- close jadwal ibadah --> 
+
+
+			<hr style="color: yellow;border:5px solid yellow;">
+
+			<!-- open visi misi -->
+
+				<div id="visimisi" style="display: flex; justify-content: center;background-color: black;">
+					<div style="display: flex; justify-content: center;margin: 10px; flex-direction: row;padding: 10px;">
+						<div style="margin: 10px;">
+							<div style="display: flex; flex-direction: column;">
+							<h4 style="text-align: center; color: white;font-weight:bolder;">VISI</h4>
+							<p style="color: yellow; font-weight: bolder; text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+
+						<div style="margin: 10px;">
+							<div style="display: flex; flex-direction: column;">
+							<h4 style="text-align: center;color: white;font-weight:bolder;">MISI</h4>
+							<p style="color: yellow; font-weight: bolder;text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+
+
+			<!-- close visi misi -->
+
 
 
 <?php  
@@ -259,7 +455,7 @@ if(isset($_SESSION['namauser'])){
 
 
 		<!-- open footer -->
-		<div class="footer" style="display: flex;bottom: 0;right: 0;left: 0;padding: 10px; background-color: #000000; width: 100%;">
+		<div class="footer" style="display: flex;bottom: 0;right: 0;left: 0;padding: 10px; background-color: #000000; width: 100%;margin-top: 50px;">
 			<div style="text-align: center;width: 100%;">
 				<div style="color: #ffffff;padding-top: 30px;padding-bottom: 30px;font-weight: bolder;font-size: 25px;">© HKBP Pos Pelayanan Saguba - 2022</div>
 			</div>
